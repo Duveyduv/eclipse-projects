@@ -1,0 +1,5 @@
+Stuff to know:
+
+
+		// if modulus gives you a negative
+		// int i = (((-var1 % var2) + 2) % 2)

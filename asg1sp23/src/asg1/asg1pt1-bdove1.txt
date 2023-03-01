@@ -1,0 +1,57 @@
+// Assignment-1 – COSC 2425-03 – Professor McCurry
+
+//  Implemented by - Brandon Dove
+
+
+The sum of numbers of 49 to 250 with an increment of 9 is: 11115
+
+The sum the numbers from 2445 to 3151 that are evenly divisible by 37 are: 
+2479
+4995
+7548
+10138
+12765
+15429
+18130
+20868
+23643
+26455
+29304
+32190
+35113
+38073
+41070
+44104
+47175
+50283
+53428
+
+
+The sum of squares of numbers from 5 to 30 are: 
+25
+61
+110
+174
+255
+355
+476
+620
+789
+985
+1210
+1466
+1755
+2079
+2440
+2840
+3281
+3765
+4294
+4870
+5495
+6171
+6900
+7684
+8525
+9425
+

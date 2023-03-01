@@ -1,0 +1,192 @@
+// Assignment-1 – COSC 2425-03 – Professor McCurry
+
+//  Implemented by - Brandon Dove
+
+///////////////////////////////////////////////////////////////////////////
+
+PART 1
+
+///////////////////////////////////////////////////////////////////////////
+
+package asg1;
+
+public class Asg1Part1 {
+	public static void main(String[] args) {
+	
+		int sumNums = 0;
+		int sumDivide = 0;
+		int sumSquares = 0;
+		
+		for(int i = 49; i <= 450; i += 9) {
+			
+			sumNums = sumNums + i;
+		}
+	
+		System.out.println("The sum of numbers of 49 to 250 with an increment of 9 is: " + sumNums + "\n");
+		
+		
+		System.out.println("The sum the numbers from 2445 to 3151 that are evenly divisible by 37 are: ");
+		
+		for(int i = 2445; i <= 3151; i++) {
+			
+			if (i % 37 == 0) {
+				
+				sumDivide = sumDivide + i;
+				System.out.println(sumDivide);
+				
+				
+			}
+			
+		
+		
+		}
+		
+		System.out.println("\n");
+		System.out.println("The sum of squares of numbers from 5 to 30 are: ");
+		
+		for(int i = 5; i <= 30; i++) {
+			
+			sumSquares += i*i;
+			System.out.println(sumSquares);
+			
+		}
+		
+		
+		
+	}
+	
+	
+
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+The sum of numbers of 49 to 250 with an increment of 9 is: 11115
+
+The sum the numbers from 2445 to 3151 that are evenly divisible by 37 are: 
+2479
+4995
+7548
+10138
+12765
+15429
+18130
+20868
+23643
+26455
+29304
+32190
+35113
+38073
+41070
+44104
+47175
+50283
+53428
+
+
+The sum of squares of numbers from 5 to 30 are: 
+25
+61
+110
+174
+255
+355
+476
+620
+789
+985
+1210
+1466
+1755
+2079
+2440
+2840
+3281
+3765
+4294
+4870
+5495
+6171
+6900
+7684
+8525
+9425
+
+///////////////////////////////////////////////////////////////////////////
+
+PART 2
+
+///////////////////////////////////////////////////////////////////////////
+
+package asg1;
+
+import java.util.Scanner;
+
+public class MadLib {
+	public static void main(String[] args) {
+		
+		Scanner madLib = new Scanner(System.in);
+		System.out.print("Enter a place: ");
+		String place = madLib.nextLine();
+		System.out.print("Enter a persons name: ");
+		String name = madLib.nextLine();
+		System.out.print("Enter adjective: ");
+		String adjective1 = madLib.nextLine();
+		System.out.print("Enter noun: ");
+		String noun1 = madLib.nextLine();
+		System.out.print("Enter noun: ");
+		String noun2 = madLib.nextLine();
+		System.out.print("Enter adjective: ");
+		String adjective2 = madLib.nextLine();
+		System.out.print("Enter adjective: ");
+		String adjective3 = madLib.nextLine();
+		System.out.print("Enter noun: ");
+		String noun3 = madLib.nextLine();
+		System.out.print("Enter number: ");
+		String number = madLib.nextLine();
+		System.out.print("Enter noun: ");
+		String noun4 = madLib.nextLine();
+		System.out.print("Enter food: ");
+		String food = madLib.nextLine();
+		System.out.print("Enter verb: ");
+		String verb = madLib.nextLine();
+		madLib.close();
+
+		System.out.println(" I went to the beach in " + place + " today with " + name +".\n" +
+						   " We had a " + adjective1 + " time." + " We first built a " + noun1 + "\n" +
+						   " and then we ran around in the " + noun2 + " for a little while.\n" +
+						   " The water was a bit " + adjective2 +"." + " The sun was very " + adjective3 + "\n" +
+						   " so we made sure to wear a lot of " + noun3 +"." + " We spent " + number + "\n hours there." +
+						   " At the end of the day, we treated outselves to a\n " + noun4 + " and had " +
+						   food + " for dinner. I definitely want to go\n to the beach again but next time I " +
+						   "want to " + verb +".");
+		
+		
+		
+	}
+}
+
+
+///////////////////////////////////////////////////////////////////////////
+
+Enter a place: Belton
+Enter a persons name: Alec
+Enter adjective: Huge
+Enter noun: Car
+Enter noun: Cat
+Enter adjective: Fastest
+Enter adjective: Biggest
+Enter noun: Brandon
+Enter number: 5
+Enter noun: House
+Enter food: Pizza
+Enter verb: Running
+ I went to the beach in Belton today with Alec.
+ We had a Huge time. We first built a Car
+ and then we ran around in the Cat for a little while.
+ The water was a bit Fastest. The sun was very Biggest
+ so we made sure to wear a lot of Brandon. We spent 5
+ hours there. At the end of the day, we treated outselves to a
+ House and had Pizza for dinner. I definitely want to go
+ to the beach again but next time I want to Running.

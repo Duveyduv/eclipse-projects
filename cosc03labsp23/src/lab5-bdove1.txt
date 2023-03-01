@@ -1,0 +1,217 @@
+// Lab-5 – COSC 2425-03 – Professor McCurry
+
+//  Implemented by - Brandon Dove
+
+/////////////////////////////////////////////////////////////////////
+
+
+CALCULATOR CLASS
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+package cosc03lab5sp23;
+
+
+
+public class Calculator {
+	
+	
+	// add two floats and return value
+	public float add(float a, float b) {
+		
+		
+		return a + b;
+		
+		
+	}
+	
+	// subtract two floats and return value
+	public float subtract(float a, float b)
+	
+	{
+		
+		return a - b;
+		
+		
+	}
+	
+	// multiply two floats and return value
+	public float multiply(float a, float b)
+	
+	{
+		
+		return a * b;
+		
+		
+	}
+
+	// divide two floats and return value
+	public float divide(float a, float b)
+	
+	{
+		
+		return a / b;
+		
+		
+	}
+	
+	// check if two floats are equal, and return if true, else, false
+	public boolean boolCheck(float a, float b)
+	
+	{
+		
+		if (a == b) {
+			
+			return true;
+			
+		}
+		
+		else
+			
+			return false;
+		
+	}
+	
+
+}
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+JUNIT TEST
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+package cosc03lab5sp23Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Test;
+
+import cosc03lab5sp23.Calculator;
+
+
+public class TestCase {
+	
+	
+	// new object of calc
+	Calculator calc = new Calculator();
+	
+	// defining our datasets
+	float a = 4;
+	float b = 2;
+	
+	float c = (float)4.5;
+	float d = (float)2.25;
+	
+	float e = (float)2.25;
+	float f = (float)4.5;
+	
+	
+	
+	/* testing all methods from calculator class, and then assertEquals these values
+	 * with the object of calculator's methods.
+	 * 
+	*/
+	
+	@Test
+	public void expValAdd() 
+	
+	{
+		
+		
+		assertEquals(a+b, calc.add(a, b));
+		assertEquals(c+d, calc.add(c, d));
+		assertEquals(e+f, calc.add(e, f));
+		
+		
+	}
+	
+	@Test
+	public void expValSub()
+	
+	{
+		
+		
+		assertEquals(a-b, calc.subtract(a, b));
+		assertEquals(c-d, calc.subtract(c, d));
+		assertEquals(e-f, calc.subtract(e, f));
+		
+		
+	}
+	
+	@Test
+	public void expValMulti()
+	
+	{
+		
+		
+		assertEquals(a*b, calc.multiply(a, b));
+		assertEquals(c*d, calc.multiply(c, d));
+		assertEquals(e*f, calc.multiply(e, f));
+
+		
+		
+	}
+	
+	
+	@Test
+	public void expValDiv()
+	
+	{
+		
+		
+		assertEquals(a/b, calc.divide(a, b));
+		assertEquals(c/d, calc.divide(c, d));
+		assertEquals(e/f, calc.divide(e, f));
+
+		
+		
+	}
+	
+	
+	@Test
+	public void expValboolCheck()
+	
+	{
+		
+		assertEquals(a==b, calc.boolCheck(a, b));
+		assertEquals(c==d, calc.boolCheck(c, d));
+		assertEquals(e==f, calc.boolCheck(e, f));
+		
+		
+	}
+	
+	
+
+	
+
+}
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+XML FILE
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestCase" project="cosc03labsp23" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="cosc03lab5sp23Test.TestCase" time="0.004" displayname="TestCase" uniqueid="[engine:junit-vintage]/[runner:cosc03lab5sp23Test.TestCase]">
+    <testcase name="expValMulti" classname="cosc03lab5sp23Test.TestCase" time="0.0" displayname="expValMulti" uniqueid="[engine:junit-vintage]/[runner:cosc03lab5sp23Test.TestCase]/[test:expValMulti(cosc03lab5sp23Test.TestCase)]"/>
+    <testcase name="expValAdd" classname="cosc03lab5sp23Test.TestCase" time="0.0" displayname="expValAdd" uniqueid="[engine:junit-vintage]/[runner:cosc03lab5sp23Test.TestCase]/[test:expValAdd(cosc03lab5sp23Test.TestCase)]"/>
+    <testcase name="expValDiv" classname="cosc03lab5sp23Test.TestCase" time="0.001" displayname="expValDiv" uniqueid="[engine:junit-vintage]/[runner:cosc03lab5sp23Test.TestCase]/[test:expValDiv(cosc03lab5sp23Test.TestCase)]"/>
+    <testcase name="expValSub" classname="cosc03lab5sp23Test.TestCase" time="0.0" displayname="expValSub" uniqueid="[engine:junit-vintage]/[runner:cosc03lab5sp23Test.TestCase]/[test:expValSub(cosc03lab5sp23Test.TestCase)]"/>
+    <testcase name="expValboolCheck" classname="cosc03lab5sp23Test.TestCase" time="0.0" displayname="expValboolCheck" uniqueid="[engine:junit-vintage]/[runner:cosc03lab5sp23Test.TestCase]/[test:expValboolCheck(cosc03lab5sp23Test.TestCase)]"/>
+  </testsuite>
+</testrun>
+
+
+

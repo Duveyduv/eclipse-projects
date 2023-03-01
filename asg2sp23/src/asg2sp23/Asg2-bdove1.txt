@@ -1,0 +1,176 @@
+// Assignment-2 – COSC 2425-03 – Professor McCurry
+
+//  Implemented by - Brandon Dove
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+THIS IS THE EMPLOYEE CLASS DATA
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+package asg2sp23;
+
+public class Employee {
+	
+	String fname;
+	String lname;
+	int empID;
+	String dpt;
+	String func;
+	String empEmail;
+	
+	// Initializing the fields within the main class.
+
+
+	public Employee() {
+		empID = 0;
+		fname = "null";
+		lname = "null";
+		dpt = "null";
+		func = "null";
+		empEmail = "null";
+	}
+	
+	/* This method above will provide a default output
+	   of "null" if no instances are created.
+	*/
+	
+	public Employee(String lname, String fname, int empID, String dpt, String func, String empEmail) {
+		
+		this.lname = lname;
+		this.fname = fname;
+		this.empID = empID;
+		this.dpt = dpt;
+		this.func = func;
+		this.empEmail = empEmail;
+		
+		// This is the main constructor method.
+		
+	}
+
+	public String getFname() {
+		return fname;
+	}
+
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+
+	public String getLname() {
+		return lname;
+	}
+
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+
+	public int getEmpID() {
+		return empID;
+	}
+
+	public void setEmpID(int empID) {
+		this.empID = empID;
+	}
+
+	public String getDpt() {
+		return dpt;
+	}
+
+	public void setDpt(String dpt) {
+		this.dpt = dpt;
+	}
+
+	public String getFunc() {
+		return func;
+	}
+
+	public void setFunc(String func) {
+		this.func = func;
+	}
+
+	public String getEmpEmail() {
+		return empEmail;
+	}
+
+	public void setEmpEmail(String empEmail) {
+		this.empEmail = empEmail;
+	}
+	
+	// Appropriate mutators and accessors for the fields.
+	
+	public String toString() {
+		return this.lname + ", " + this.fname + ", employee " + this.empID + ", works as a " + this.func + 
+				 " in " + this.dpt + " and has the following email address: " + this.empEmail;
+	
+	// Created a return method for the formatting requirement.
+		
+	}
+	
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+THIS IS THE MAIN CLASS DATA
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+package asg2sp23;
+
+public class EmployeeMain {
+
+	public static void main(String[] args) {
+		Employee Benita, Jodi, Cherianne, Brandon, Alec;
+		
+		
+		Benita = new Employee("Jurkowski", "Benita", 944209250, "Sales", "GIS Technical Architect", "bjurkowski1@company.com");
+		Jodi = new Employee("Hearns", "Jodi", 98903489, "Sales", "Sales Representative", "jhearns2@company.com");
+		Cherianne = new Employee("Newey", "Cherianne", 419553081, "Marketing", "Senior Developer", "cnewey0@company.com");
+		
+		// Creating objects of the employee class.
+		
+		Brandon = new Employee("Dove", "Brandon", 123456709, "Studies", "Student", "brandondove12345@hotmail.com");
+		Alec = new Employee("Deen", "Alec", 14245213, "Technicians", "Technician", "adeen1@yahoo.com");
+		
+		// My two sets of data.
+		
+		System.out.println(Benita + "\n");
+		
+		System.out.println(Jodi + "\n");
+		
+		System.out.println(Cherianne + "\n");
+		
+		System.out.println(Brandon + "\n");
+		
+		System.out.println(Alec + "\n");
+
+
+		// Printing the data of the objects with a newline after each set.
+		
+		
+	}
+
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+OUTPUT
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Jurkowski, Benita, employee 94420925, works as a GIS Technical Architect in Sales and has the following email address: bjurkowski1@company.com
+
+Hearns, Jodi, employee 98903489, works as a Sales Representative in Sales and has the following email address: jhearns2@company.com
+
+Newey, Cherianne, employee 419553081, works as a Senior Developer in Marketing and has the following email address: cnewey0@company.com
+
+Dove, Brandon, employee 123456709, works as a Student in Studies and has the following email address: brandondove12345@hotmail.com
+
+Deen, Alec, employee 14245213, works as a Technician in Technicians and has the following email address: adeen1@yahoo.com
+
+

@@ -1,0 +1,233 @@
+// Lab-4 – COSC 2425-03 – Professor McCurry
+
+//  Implemented by - Brandon Dove
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+ArrayExamples
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+package cosc242503lab4sp23;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+
+
+public class ArrayExamples {
+	
+	// Checking length of array, returning index value, and each value in array
+
+	public static void printArray(int[] array)
+	
+	{
+		
+		for (int i = 0; i < array.length; i++)
+			
+		{
+			
+			System.out.println("[" +i+ "]: " + array[i]);
+			
+			
+		}
+		
+		
+		
+	}
+	
+	
+	// Sets every index position = to 0 as it increments through it.
+	
+	public static void resetArray(int[] array)
+	
+	
+	{
+		
+		for (int i = 0; i < array.length; i++)
+			
+			
+		{
+			
+			array[i] = 0;
+			
+			
+		}
+		
+		
+		
+	}
+	
+	
+	// Total is set to 0, for each element in array, add it to total, then divide and return by length of array 
+
+
+	public static float findAvgForLoop(int[] array)
+	
+	
+	{
+		
+		float total = 0;
+		
+		
+		for (int element : array) 
+		
+		
+		{
+			
+			
+			total += element;
+			
+			
+			
+		}
+		
+		return total / array.length;
+
+		
+		
+	}
+	
+	
+	// Adds value that is input into method to each value in their index positions
+	
+	public static void increaseByValue(int [] array, int value)
+	
+	
+	{
+		
+		
+		
+		for (int i = 0; i < array.length; i++)
+			
+			
+		{
+			
+			
+			array[i] += value;
+			
+			
+		}
+		
+		System.out.println(array);
+		
+		
+	}
+	
+	/* Set a temp variable = to the first value in the list, the first value in the list is now equal to the second
+	   Lastly, the second position is now set to the first.
+	*/
+	
+	public static void swapArrayValues(int [] list, int loc1, int loc2)
+	
+	
+	{
+		
+		
+		int temp = 0;
+		
+		for (int i = 0; i < list.length; i++);
+		
+		
+		{
+			
+			temp = list[loc1];
+			
+			list[loc1] = list[loc2];
+			
+			list[loc2] = temp;
+			
+			
+			
+		}
+		
+		System.out.println(list);
+		
+	}
+	
+
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+COSC242503_Lab4Test.java
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+Enter your name: 
+Brandon
+Testing for Brandon
+*****Now testing printArray method*****
+[0]: -666128516
+[1]: 862777119
+[2]: 417843029
+[3]: 279359592
+[4]: 1859850520
+
+*****Now testing resetArray method*****
+Before Clearing Array:
+[0]: -666128516
+[1]: 862777119
+[2]: 417843029
+[3]: 279359592
+[4]: 1859850520
+
+After Clearing Array:
+[0]: 0
+[1]: 0
+[2]: 0
+[3]: 0
+[4]: 0
+
+*****Now testing findAvgForLoop method*****
+SUCCESS expected Array Avg was: 32.0
+Input Array as follows:
+[0]: 70
+[1]: 45
+[2]: 25
+[3]: 78
+[4]: -58
+*****Now testing increaseByValue method*****
+
+Starting array values are:
+[0]: 70
+[1]: 45
+[2]: 25
+[3]: 78
+[4]: -58
+The increment value is: 38 
+[I@816f27d
+
+SUCCESS expected myArray2 was increased by: 38 and matched expArray2!
+After Increasing the myArray2 by: 38 
+[0]: 108
+[1]: 83
+[2]: 63
+[3]: 116
+[4]: -20
+
+*****Now testing swapArrayValues method*****
+
+Starting array values are:
+[0]: 70
+[1]: 45
+[2]: 25
+[3]: 78
+[4]: -58
+
+Locations being swapped are: 1 , 4
+[I@87aac27
+
+SUCCESS expected Array Swap was: 
+[0]: 70
+[1]: -58
+[2]: 25
+[3]: 78
+[4]: 45
+
+

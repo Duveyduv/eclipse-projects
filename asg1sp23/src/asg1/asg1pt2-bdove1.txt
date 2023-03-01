@@ -1,0 +1,25 @@
+// Assignment-1 – COSC 2425-03 – Professor McCurry
+
+//  Implemented by - Brandon Dove
+
+
+Enter a place: Belton
+Enter a persons name: Alec
+Enter adjective: Huge
+Enter noun: Car
+Enter noun: Cat
+Enter adjective: Fastest
+Enter adjective: Biggest
+Enter noun: Brandon
+Enter number: 5
+Enter noun: House
+Enter food: Pizza
+Enter verb: Running
+ I went to the beach in Belton today with Alec.
+ We had a Huge time. We first built a Car
+ and then we ran around in the Cat for a little while.
+ The water was a bit Fastest. The sun was very Biggest
+ so we made sure to wear a lot of Brandon. We spent 5
+ hours there. At the end of the day, we treated outselves to a
+ House and had Pizza for dinner. I definitely want to go
+ to the beach again but next time I want to Running.

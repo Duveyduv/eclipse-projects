@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestCase" project="cosc03labsp23" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="cosc03lab5sp23Test.TestCase" time="0.004" displayname="TestCase" uniqueid="[engine:junit-vintage]/[runner:cosc03lab5sp23Test.TestCase]">
+    <testcase name="expValMulti" classname="cosc03lab5sp23Test.TestCase" time="0.0" displayname="expValMulti" uniqueid="[engine:junit-vintage]/[runner:cosc03lab5sp23Test.TestCase]/[test:expValMulti(cosc03lab5sp23Test.TestCase)]"/>
+    <testcase name="expValAdd" classname="cosc03lab5sp23Test.TestCase" time="0.0" displayname="expValAdd" uniqueid="[engine:junit-vintage]/[runner:cosc03lab5sp23Test.TestCase]/[test:expValAdd(cosc03lab5sp23Test.TestCase)]"/>
+    <testcase name="expValDiv" classname="cosc03lab5sp23Test.TestCase" time="0.001" displayname="expValDiv" uniqueid="[engine:junit-vintage]/[runner:cosc03lab5sp23Test.TestCase]/[test:expValDiv(cosc03lab5sp23Test.TestCase)]"/>
+    <testcase name="expValSub" classname="cosc03lab5sp23Test.TestCase" time="0.0" displayname="expValSub" uniqueid="[engine:junit-vintage]/[runner:cosc03lab5sp23Test.TestCase]/[test:expValSub(cosc03lab5sp23Test.TestCase)]"/>
+    <testcase name="expValboolCheck" classname="cosc03lab5sp23Test.TestCase" time="0.0" displayname="expValboolCheck" uniqueid="[engine:junit-vintage]/[runner:cosc03lab5sp23Test.TestCase]/[test:expValboolCheck(cosc03lab5sp23Test.TestCase)]"/>
+  </testsuite>
+</testrun>
