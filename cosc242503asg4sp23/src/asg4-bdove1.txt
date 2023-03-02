@@ -356,4 +356,13 @@ XML DOC
 //////////////////////////////////////////////////////////////////////////////
 
 
-
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TVTest" project="cosc242503asg4sp23" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="cosc242503asg4sp23Test.TVTest" time="0.017" displayname="TVTest" uniqueid="[engine:junit-jupiter]/[class:cosc242503asg4sp23Test.TVTest]">
+    <testcase name="testSetChannel" classname="cosc242503asg4sp23Test.TVTest" time="0.012" displayname="testSetChannel()" uniqueid="[engine:junit-jupiter]/[class:cosc242503asg4sp23Test.TVTest]/[method:testSetChannel()]"/>
+    <testcase name="testIncreaseVolume" classname="cosc242503asg4sp23Test.TVTest" time="0.001" displayname="testIncreaseVolume()" uniqueid="[engine:junit-jupiter]/[class:cosc242503asg4sp23Test.TVTest]/[method:testIncreaseVolume()]"/>
+    <testcase name="testInvalidChannel" classname="cosc242503asg4sp23Test.TVTest" time="0.001" displayname="testInvalidChannel()" uniqueid="[engine:junit-jupiter]/[class:cosc242503asg4sp23Test.TVTest]/[method:testInvalidChannel()]"/>
+    <testcase name="testPowerOn" classname="cosc242503asg4sp23Test.TVTest" time="0.001" displayname="testPowerOn()" uniqueid="[engine:junit-jupiter]/[class:cosc242503asg4sp23Test.TVTest]/[method:testPowerOn()]"/>
+    <testcase name="testDecreaseVolume" classname="cosc242503asg4sp23Test.TVTest" time="0.001" displayname="testDecreaseVolume()" uniqueid="[engine:junit-jupiter]/[class:cosc242503asg4sp23Test.TVTest]/[method:testDecreaseVolume()]"/>
+    <testcase name="testPowerOff" classname="cosc242503asg4sp23Test.TVTest" time="0.001" displayname="testPowerOff()" uniqueid="[engine:junit-jupiter]/[class:cosc242503asg4sp23Test.TVTest]/[method:testPowerOff()]"/>
+  </testsuite>
+</testrun>
