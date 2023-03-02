@@ -1,0 +1,359 @@
+// Assignment-4 – COSC 2425-03 – Professor McCurry
+
+//  Implemented by - Brandon Dove
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+TV CLASS
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+package cosc242503asg4sp23;
+
+public class TV {
+	
+	
+	// fields
+	private boolean power;
+	private int volume;
+	private int channels;
+	
+	
+	
+	// main constructor for TV
+	public TV(boolean power, int volume, int channels) 
+	
+	{
+	
+		this.power = power;
+		this.volume = volume;
+		this.channels = channels;
+	
+	}
+
+	// setters and getters
+	public boolean isPower() 
+	
+	{
+		return power;
+	}
+
+
+	public void setPower(boolean power) 
+	
+	{
+		this.power = power;
+	}
+
+
+	public int getVolume() 
+	
+	{
+		return volume;
+	}
+
+	// method to increment volume
+	public void incVolume(int volume) 
+	
+	{
+		
+		this.volume ++;
+		
+	}
+	
+	// method to decrement volume
+	public void decVolume(int volume) 
+	
+	{
+		
+		this.volume --;
+		
+	}
+
+
+	public int getChannels() 
+	
+	{
+		return channels;
+	}
+
+
+	public void setChannels(int channels) 
+	
+	{
+		this.channels = channels;
+	}
+	
+}
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+TV REMOTE CONTROL CLASS
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+package cosc242503asg4sp23;
+
+public class TVRemoteControl {
+	
+	
+	// fields for tv remote that takes in a tv object
+	
+	private TV tv;
+	private boolean powerOn;
+	private int volume;
+	private int channel;
+	
+	
+	// constructor for remote with default values and takes in 1 tv object
+	
+	public TVRemoteControl(TV tv)
+	
+	{
+		this.tv = tv;
+		this.powerOn = false;
+		this.volume = 10;
+		this.channel = 3;
+		
+	}
+	
+	
+	public void powerOff() 
+	
+	{
+		
+		this.powerOn = false;
+		
+	}
+	
+	
+	public void powerOn()
+	
+	{
+		
+		this.powerOn = true;
+		
+	}
+
+
+	public boolean isPowerOn() 
+	
+	{
+		
+		return powerOn;
+	
+	}
+	
+	// increase volume if less than 100.
+	
+	public void increaseVolume()
+	
+	{
+		
+		if (volume < 100)
+			
+		{
+			
+			this.volume ++;
+			
+		}
+		
+	}
+	
+	// decrease volume if greater than 0.
+	
+	public void decreaseVolume()
+	
+	{
+		
+		if (volume > 0)
+			
+		{
+			
+			this.volume --;
+			
+		}
+		
+		
+	}
+
+
+	public int getVolume() 
+	
+	{
+		
+		return volume;
+	
+	}
+	
+	// set the channel with conditions so that values entered cannot be negative or above 100.
+	
+	public void setChannel(int channel)
+	
+	{
+		
+        if (channel < 0 )
+        
+        {
+        	
+        	channel = 3;
+        	
+        }
+        
+        if (channel > 100)
+        	
+        {
+        	
+        	channel = 3;
+        	
+        }
+        
+        else 
+        	
+        {
+        	
+        	this.channel = channel;
+        	
+        }
+        
+        
+	}
+	
+	
+	public int getChannel()
+	
+	{
+		
+		return channel;
+		
+	}
+	
+}
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+JUNIT TEST
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+package cosc242503asg4sp23Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import cosc242503asg4sp23.TV;
+import cosc242503asg4sp23.TVRemoteControl;
+
+public class TVTest
+
+{
+	// instantiation of objects
+    private TV tv;
+    private TVRemoteControl remote;
+
+    @BeforeEach
+    public void setUp() 
+    
+    {
+    	// the setup method for each test case, so creates a new object for each one.
+        tv = new TV(false, 10, 3);
+        remote = new TVRemoteControl(tv);
+        // remote takes in a tv object.
+    }
+    
+    
+    
+    
+    
+    /*
+     * tests for power off and on, increase and decrease volume, set channels, and preventing invalid channels.
+     */
+    
+    @Test
+    public void testPowerOn() 
+    
+    {
+    	
+        remote.powerOn();
+        Assertions.assertTrue(remote.isPowerOn());
+        
+    }
+
+    @Test
+    public void testPowerOff() 
+    
+    {
+        
+    	remote.powerOff();
+        Assertions.assertFalse(remote.isPowerOn());
+        
+    }
+
+    @Test
+    public void testIncreaseVolume() 
+    
+    {
+        
+    	remote.increaseVolume();
+        Assertions.assertEquals(11, remote.getVolume());
+        remote.increaseVolume();
+        Assertions.assertEquals(12, remote.getVolume());
+        
+    }
+
+    @Test
+    public void testDecreaseVolume() 
+    
+    {
+        
+    	remote.decreaseVolume();
+        Assertions.assertEquals(9, remote.getVolume());
+        remote.decreaseVolume();
+        Assertions.assertEquals(8, remote.getVolume());
+        
+    }
+
+    @Test
+    public void testSetChannel() 
+    
+    {
+        
+    	remote.setChannel(5);   
+        Assertions.assertEquals(5, remote.getChannel());
+        remote.setChannel(100);
+        Assertions.assertEquals(100, remote.getChannel());
+        remote.setChannel(35);
+        Assertions.assertEquals(35, remote.getChannel());
+        
+    }
+
+    @Test
+    public void testInvalidChannel() 
+    
+    {
+        
+    	remote.setChannel(-1);
+        Assertions.assertEquals(3, remote.getChannel());
+        remote.setChannel(105);
+        Assertions.assertEquals(3, remote.getChannel());
+        
+    }
+
+}
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+XML DOC
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+
