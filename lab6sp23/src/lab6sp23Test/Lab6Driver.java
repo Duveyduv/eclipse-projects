@@ -32,7 +32,7 @@ public class Lab6Driver
 			
 		{
 			
-			System.out.println("The two properties have the same dimenesions.");
+			System.out.println("The two properties have the same dimensions.");
 			
 		}
 		

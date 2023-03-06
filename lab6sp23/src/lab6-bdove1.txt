@@ -198,7 +198,7 @@ Property RWA1 with length 78.7, width 72.86, and area 5734.082.
 The two properties are being compared.
 
 DATA1 equals DATA2: true
-The two properties have the same dimenesions.
+The two properties have the same dimensions.
 
 
 
