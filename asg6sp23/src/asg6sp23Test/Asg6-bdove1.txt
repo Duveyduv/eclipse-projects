@@ -1,0 +1,424 @@
+// Assignment-6 – COSC 2425-01 – Professor McCurry
+
+//  Implemented by - Brandon Dove
+
+
+////////////////////////////////////////////
+
+Character Class
+
+////////////////////////////////////////////
+
+package asg6sp23;
+
+public class Character 
+
+{
+	// Fields
+	String name;
+	int health;
+	int mana;
+	
+	// Constructor
+	public Character(String name, int health, int mana) 
+	
+	{
+		
+		this.name = name;
+		this.health = health;
+		this.mana = mana;
+		
+	}
+
+	// Setters and getters
+	public String getName() 
+	
+	{
+	
+		return name;
+	
+	}
+
+
+	public void setName(String name) 
+	
+	{
+	
+		this.name = name;
+	
+	}
+
+
+	public int getHealth() 
+	
+	{
+	
+		return health;
+	
+	}
+
+
+	public void setHealth(int health) 
+	
+	{
+	
+		this.health = health;
+	
+	}
+
+
+	public int getMana() 
+	
+	{
+	
+		return mana;
+	
+	}
+
+
+	public void setMana(int mana) 
+	
+	{
+	
+		this.mana = mana;
+	
+	}
+	
+	// Main base attack for abstract class
+	public void attack(Character target)
+	
+	{
+		
+		System.out.println(name + " attacked " + target.getName());
+        target.setHealth(target.getHealth() - 10);
+			
+	}
+
+
+	// Base toString for Character
+	@Override
+	public String toString() 
+	
+	{
+	
+		return "Character: " + name + ", Health: " + health + " Mana: " + mana;
+	
+	}
+	
+}
+
+////////////////////////////////////////////
+
+Warrior Class
+
+////////////////////////////////////////////
+
+package asg6sp23;
+
+public class Warrior extends Character 
+
+{
+	
+	// Extending from base Character class and new field
+    private int strength;
+
+    // Main constructor inheriting base fields
+    public Warrior(String name, int health, int mana, int strength) 
+    
+    {
+    
+    	super(name, health, mana);
+        this.strength = strength;
+    
+    }
+
+    // Setters and getters
+    public int getStrength() 
+    
+    {
+        
+    	return strength;
+    
+    }
+
+    public void setStrength(int strength) 
+    
+    {
+        
+    	this.strength = strength;
+    
+    }
+
+    // Sword attack method
+    public void swordAttack(Character target) 
+    
+    {
+        
+    	System.out.println(this.getName() + " swung at " + target.getName());
+        target.setHealth(target.getHealth() - 10);
+
+    
+    }
+
+    // toString overriding Character's toString
+    @Override
+    public String toString() 
+    
+    {
+        
+    	return "Warrior " + super.toString() + ", Strength: " + this.strength;
+    
+    }
+
+}
+
+////////////////////////////////////////////
+
+Mage Class
+
+////////////////////////////////////////////
+
+package asg6sp23;
+
+public class Mage extends Character 
+
+{	
+	// Extending Character class and new field
+    private int intelligence;
+
+    
+    // Constructor inheriting Character class fields
+    public Mage(String name, int health, int mana, int intelligence) 
+    
+    {
+    
+    	super(name, health, mana);
+        this.intelligence = intelligence;
+    
+    }
+
+    // Setters and getters
+    public int getIntelligence() 
+    
+    {
+        
+    	return intelligence;
+    
+    }
+
+    public void setIntelligence(int intelligence) 
+    
+    {
+        
+    	this.intelligence = intelligence;
+    
+    }
+    
+    
+    // Fireball spell attack
+    public void fireballSpell(Character target) 
+    
+    {
+        
+    	System.out.println(this.getName() + " cast a fireball spell at " + target.getName());
+        target.setHealth(target.getHealth() - 10);
+
+    }
+
+    // Overriding Character toString
+    @Override
+    public String toString() 
+    
+    {
+        
+    	return "Mage " + super.toString() + ", Intelligence: " + this.intelligence;
+    
+    }
+
+}
+
+////////////////////////////////////////////
+
+Druid Class
+
+////////////////////////////////////////////
+
+package asg6sp23;
+
+public class Druid extends Warrior implements WarriorAttack 
+
+{
+	// Inheriting Warrior their attacks.
+	private int wisdom;
+
+	// Constructor
+    public Druid(String name, int health, int mana, int strength, int wisdom) 
+    
+    {
+    
+    	super(name, health, mana, strength);
+        this.wisdom = wisdom;
+    
+    }
+    
+    // Setters and getters
+    public int getWisdom() 
+    
+    {
+    
+    	return wisdom;
+    
+    }
+
+    public void setWisdom(int wisdom) 
+    
+    {
+    
+    	this.wisdom = wisdom;
+    
+    }
+    
+    // Healing spell
+    public void heal(Character target) 
+    
+    {
+    
+    	System.out.println(this.getName() + " cast a healing spell on " + target.getName());
+        target.setHealth(target.getHealth() + 10);
+    
+    }
+    
+    // Overriding Warrior toString
+    @Override
+    public String toString() 
+    
+    {
+    
+    	return "Druid " + super.toString() + ", Wisdom: " + this.wisdom;
+    
+    }
+
+    
+    // swordAttack method
+    @Override
+    public void swordAttack(Character target) 
+    
+    {
+    
+    	System.out.println(this.getName() + " swings their sword at " + target.getName());
+        target.setHealth(target.getHealth() - 10);
+
+    }
+}
+
+////////////////////////////////////////////
+
+WarriorAttack Interface
+
+////////////////////////////////////////////
+
+package asg6sp23;
+
+public interface WarriorAttack 
+
+{
+	
+    void swordAttack(Character target);
+
+}
+
+////////////////////////////////////////////
+
+MageAttack Interface
+
+////////////////////////////////////////////
+
+package asg6sp23;
+
+public interface MageAttack 
+
+{
+
+	 void fireballSpell(Character target);
+	 
+}
+
+////////////////////////////////////////////
+
+GameDriver
+
+////////////////////////////////////////////
+
+package asg6sp23Test;
+
+import asg6sp23.Druid;
+import asg6sp23.Mage;
+import asg6sp23.Warrior;
+import asg6sp23.Character;
+
+public class GameDriver 
+
+{
+	
+	public static void main(String[] args)
+	
+	{
+		
+		// Instantiation of objects
+		Warrior war1 = new Warrior("Brandon", 100, 50, 75);
+		Mage mage1 = new Mage("Jake", 50, 100, 75);
+		Druid druid1 = new Druid("Dove", 75, 50, 50, 50);
+		
+		// Enemies instantiations of abstract class
+		Character skeleton = new Character("Skeleton", 25, 5);
+		Character zombie = new Character("zombie", 30, 10);
+		Character goblin = new Character("Goblin", 40, 35);
+		
+		
+		
+		// Main attacks with toString to prove the attacks do damage and the healing spell works.
+		war1.swordAttack(skeleton);
+		
+		System.out.println("\n" + skeleton.toString());
+
+		mage1.fireballSpell(zombie);
+		
+		System.out.println("\n" + zombie.toString());
+
+		goblin.attack(war1);
+		
+		System.out.println("\n" + war1.toString());
+
+		druid1.heal(war1);
+		
+		System.out.println("\n" + war1.toString());
+		
+		druid1.swordAttack(goblin);
+		
+		System.out.println("\n" + goblin.toString());
+		
+	}
+
+}
+
+////////////////////////////////////////////
+
+Output
+
+////////////////////////////////////////////
+
+Brandon swung at Skeleton
+
+Character: Skeleton, Health: 15 Mana: 5
+Jake cast a fireball spell at zombie
+
+Character: zombie, Health: 20 Mana: 10
+Goblin attacked Brandon
+
+Warrior Character: Brandon, Health: 90 Mana: 50, Strength: 75
+Dove cast a healing spell on Brandon
+
+Warrior Character: Brandon, Health: 100 Mana: 50, Strength: 75
+Dove swings their sword at Goblin
+
+Character: Goblin, Health: 30 Mana: 35

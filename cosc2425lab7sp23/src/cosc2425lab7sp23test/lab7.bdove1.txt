@@ -1,0 +1,183 @@
+// Lab-7 – COSC 2425-03 – Professor McCurry
+
+//  Implemented by - Brandon Dove
+
+
+
+////////////////////////////////////////////////////////////
+
+PasswordVerifier
+
+////////////////////////////////////////////////////////////
+
+package cosc2425lab7sp23;
+
+public class PasswordVerifier 
+
+{
+
+	// Main isValid method 	
+	public static boolean isValid(String pw)
+	 
+	
+	{
+		 
+		 return (lengthCase(pw) && isUpperCase(pw) && isLowerCase(pw) && isDigit(pw) && hasSymbols(pw));
+
+	}
+	
+	// Checks if uppercase
+	public static boolean isUpperCase(String pw)
+	
+	{
+		
+		for (char i: pw.toCharArray())
+			
+		{
+			
+			if (Character.isUpperCase(i))
+				
+			{
+				
+				return true;
+				
+			}
+			
+			
+		}
+		
+		return false;
+		
+	}
+	
+	// Checks if lowercase
+	public static boolean isLowerCase(String pw)
+	
+	{
+		
+		for (char i: pw.toCharArray())
+			
+		{
+			
+			if (Character.isLowerCase(i))
+				
+			{
+				
+				return true;
+				
+			}
+			
+			
+		}
+		
+		return false;
+		
+	}
+	
+	// Checks if contains digit
+	public static boolean isDigit(String pw)
+	
+	{
+		
+		for (char i: pw.toCharArray())
+			
+		{
+			
+			if (Character.isDigit(i))
+				
+			{
+				
+				return true;
+				
+			}
+			
+			
+		}
+		
+		return false;
+		
+	}
+	
+	// Checks length is within the required dimensions
+	public static boolean lengthCase(String pw)
+	
+	{
+		
+		 if (pw.length() >= 16 && pw.length() <= 20)
+			 
+		 {
+			 
+			 return true;
+			 
+		 }
+		 	 
+		 else 
+			 
+		 {
+			 
+			 return false;
+		 }
+		
+	}
+	
+	// Checks if contains special Chars.
+	public static boolean hasSymbols(String pw)
+	
+	{
+		
+		for (char i: pw.toCharArray())
+			
+		{
+			
+			if (!Character.isLetterOrDigit(i))
+				
+			{
+				
+				return true;
+				
+			}
+			
+			
+		}
+		
+		return false;
+		
+	}
+	
+	
+}
+
+////////////////////////////////////////////////////////////
+
+Driver
+
+////////////////////////////////////////////////////////////
+
+Testing short password returned: false ,provided password not valid, Method passed
+Testing long password returned: false ,provided password not valid, Method passed
+Testing empty password returned: false ,provided password not valid, Method passed
+Testing Missing Number password returned: false ,provided password not valid, Method passed
+Testing Missing Upper Case Letter password returned: false ,provided password not valid, Method passed
+Testing Missing Lower Case Letter password returned: false ,provided password not valid, Method passed
+Testing Missing Symbol password returned: false ,provided password not valid, Method passed
+Testing Valid password returned: true ,provided password valid, Method passed
+
+////////////////////////////////////////////////////////////
+
+XML File
+
+////////////////////////////////////////////////////////////
+
+<?xml version="1.0" encoding="UTF-8"?><testrun name="PasswordVerifierTest" project="cosc2425lab7sp23" tests="8" started="8" failures="0" errors="0" ignored="0">
+  <testsuite name="cosc2425lab7sp23test.PasswordVerifierTest" time="0.0" displayname="PasswordVerifierTest" uniqueid="[engine:junit-jupiter]/[class:cosc2425lab7sp23test.PasswordVerifierTest]">
+    <testcase name="validatePassword_Missing_Symbol" classname="cosc2425lab7sp23test.PasswordVerifierTest" time="0.0" displayname="validatePassword_Missing_Symbol()" uniqueid="[engine:junit-jupiter]/[class:cosc2425lab7sp23test.PasswordVerifierTest]/[method:validatePassword_Missing_Symbol()]"/>
+    <testcase name="validatePassword_ShortPW" classname="cosc2425lab7sp23test.PasswordVerifierTest" time="0.0" displayname="validatePassword_ShortPW()" uniqueid="[engine:junit-jupiter]/[class:cosc2425lab7sp23test.PasswordVerifierTest]/[method:validatePassword_ShortPW()]"/>
+    <testcase name="validatePassword_MissingUpperCaseLetter" classname="cosc2425lab7sp23test.PasswordVerifierTest" time="0.0" displayname="validatePassword_MissingUpperCaseLetter()" uniqueid="[engine:junit-jupiter]/[class:cosc2425lab7sp23test.PasswordVerifierTest]/[method:validatePassword_MissingUpperCaseLetter()]"/>
+    <testcase name="validatePassword_EmptyPW" classname="cosc2425lab7sp23test.PasswordVerifierTest" time="0.0" displayname="validatePassword_EmptyPW()" uniqueid="[engine:junit-jupiter]/[class:cosc2425lab7sp23test.PasswordVerifierTest]/[method:validatePassword_EmptyPW()]"/>
+    <testcase name="validatePassword_MissingNumber" classname="cosc2425lab7sp23test.PasswordVerifierTest" time="0.0" displayname="validatePassword_MissingNumber()" uniqueid="[engine:junit-jupiter]/[class:cosc2425lab7sp23test.PasswordVerifierTest]/[method:validatePassword_MissingNumber()]"/>
+    <testcase name="validatePassword_longPW" classname="cosc2425lab7sp23test.PasswordVerifierTest" time="0.0" displayname="validatePassword_longPW()" uniqueid="[engine:junit-jupiter]/[class:cosc2425lab7sp23test.PasswordVerifierTest]/[method:validatePassword_longPW()]"/>
+    <testcase name="validatePassword_Missing_LowerCaseLetter" classname="cosc2425lab7sp23test.PasswordVerifierTest" time="0.0" displayname="validatePassword_Missing_LowerCaseLetter()" uniqueid="[engine:junit-jupiter]/[class:cosc2425lab7sp23test.PasswordVerifierTest]/[method:validatePassword_Missing_LowerCaseLetter()]"/>
+    <testcase name="validatePassword_ValidPW" classname="cosc2425lab7sp23test.PasswordVerifierTest" time="0.0" displayname="validatePassword_ValidPW()" uniqueid="[engine:junit-jupiter]/[class:cosc2425lab7sp23test.PasswordVerifierTest]/[method:validatePassword_ValidPW()]"/>
+  </testsuite>
+</testrun>
+

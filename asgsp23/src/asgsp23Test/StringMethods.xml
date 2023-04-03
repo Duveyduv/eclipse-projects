@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="StringMethodsJunit" project="asgsp23" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="asgsp23Test.StringMethodsTest" time="0.052" displayname="StringMethodsTest" uniqueid="[engine:junit-jupiter]/[class:asgsp23Test.StringMethodsTest]">
+    <testcase name="testSymbols" classname="asgsp23Test.StringMethodsTest" time="0.025" displayname="testSymbols()" uniqueid="[engine:junit-jupiter]/[class:asgsp23Test.StringMethodsTest]/[method:testSymbols()]"/>
+    <testcase name="testWhiteSpaces" classname="asgsp23Test.StringMethodsTest" time="0.002" displayname="testWhiteSpaces()" uniqueid="[engine:junit-jupiter]/[class:asgsp23Test.StringMethodsTest]/[method:testWhiteSpaces()]"/>
+    <testcase name="testConsonants" classname="asgsp23Test.StringMethodsTest" time="0.001" displayname="testConsonants()" uniqueid="[engine:junit-jupiter]/[class:asgsp23Test.StringMethodsTest]/[method:testConsonants()]"/>
+    <testcase name="testReverseString" classname="asgsp23Test.StringMethodsTest" time="0.003" displayname="testReverseString()" uniqueid="[engine:junit-jupiter]/[class:asgsp23Test.StringMethodsTest]/[method:testReverseString()]"/>
+    <testcase name="testVowelsAndConsonants" classname="asgsp23Test.StringMethodsTest" time="0.0" displayname="testVowelsAndConsonants()" uniqueid="[engine:junit-jupiter]/[class:asgsp23Test.StringMethodsTest]/[method:testVowelsAndConsonants()]"/>
+    <testcase name="testVowels" classname="asgsp23Test.StringMethodsTest" time="0.001" displayname="testVowels()" uniqueid="[engine:junit-jupiter]/[class:asgsp23Test.StringMethodsTest]/[method:testVowels()]"/>
+  </testsuite>
+</testrun>

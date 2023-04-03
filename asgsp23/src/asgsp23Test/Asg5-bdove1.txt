@@ -1,0 +1,419 @@
+// Assignment-5 – COSC 2425-03 – Professor McCurry
+
+//  Implemented by - Brandon Dove
+
+
+//////////////////////////////////////////////////////////
+
+StringMethods.java
+
+//////////////////////////////////////////////////////////
+
+package asgsp23;
+
+public class StringMethods 
+
+package asgsp23;
+
+public class StringMethods 
+
+{
+	// field creating string for input
+	private String stringInput;
+	
+	// constructor taking in string
+	public StringMethods(String stringInput) 
+	
+	{
+       
+		this.stringInput = stringInput;
+    
+	}
+	
+	// first method counting vowels
+	public int numVowels() 
+	
+	{
+		
+		int total = 0;
+		
+		String vowels = "AEIOUaeiou";
+		
+		for (int i = 0; i < stringInput.length(); i++) 
+		
+		{
+			
+			if (vowels.indexOf(stringInput.charAt(i)) != -1)
+				
+			{
+				
+				total ++;
+				
+				
+			}
+			
+		}
+		
+		return total;
+		
+	}
+	
+	// second method counting consonants
+	public int numConsonants() 
+	
+	{
+        
+		int total = 0;
+        
+        String consonants = "BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz";
+        
+        for (int i = 0; i < stringInput.length(); i++) 
+        
+        {
+            
+        	if (consonants.indexOf(stringInput.charAt(i)) != -1) 
+        	
+        	{
+                
+        		total++;
+            
+        	}
+        }
+        
+        return total;
+    
+	}
+	
+	// third method counting whitespaces
+    public int numWhiteSpaces() 
+    
+    {
+        
+    	int total = 0;
+        
+    	for (int i = 0; i < stringInput.length(); i++) 
+    	
+    	{
+            
+    		if (Character.isWhitespace(stringInput.charAt(i))) 
+    		
+    		{
+                
+    			total++;
+            
+    		}
+        
+    	}
+        
+    	return total;
+	
+    }
+    
+    // fourth method counting symbols
+    public int numSymbols() 
+    
+    {
+        
+    	int total = 0;
+        
+    	for (int i = 0; i < stringInput.length(); i++) 
+    	
+    	{
+            
+    		if (!Character.isLetterOrDigit(stringInput.charAt(i)) && !Character.isWhitespace(stringInput.charAt(i))) 
+    		
+    		{
+            
+    			total++;
+            
+    		}
+        
+    	}
+        
+    	return total;
+    }
+    
+    // fifth method reversing a string
+    public static String reverseString(String str) 
+    
+    {
+        
+    	String newString = "";
+    	
+    	char ch;
+    	
+    	for (int i = 0; i < str.length(); i++)
+    		
+    	{
+    		
+    		ch = str.charAt(i);
+    		
+    		newString = ch + newString;
+    	
+    	}
+    	
+    	return newString;
+    
+    }
+    
+    // toString method
+    public String toString() 
+    
+    {
+        
+    	return "StringMethods{" + "inputString = '" + stringInput + '\'' + '}';
+    
+    }
+    
+    
+
+}
+
+//////////////////////////////////////////////////////////
+
+StringMethodsDriver.java
+
+//////////////////////////////////////////////////////////
+
+package asgsp23Test;
+
+import java.util.Scanner;
+import asgsp23.StringMethods;
+
+public class StringMethodsDriver 
+
+{
+    
+	public static void main(String[] args) 
+	
+	{
+        
+		// creating a scanner and intializing a string
+		Scanner scanner = new Scanner(System.in);
+        
+		String inputString;
+		
+		StringMethods stringMethod = null;
+		
+		boolean exitProgram = false;
+		
+		// while loop for our program.
+		while (!exitProgram) 
+		
+		{
+            
+			System.out.println("\nEnter a string:\n");
+            
+			inputString = scanner.nextLine();
+            
+			stringMethod = new StringMethods(inputString);
+			
+				// menu and creating object of StringMethods that takes in input
+				System.out.println("\nSelect an option:\n");
+				System.out.println("1. Count the number of vowels in the string\n");
+				System.out.println("2. Count the number of consonants in the string\n");
+				System.out.println("3. Count both the vowels and consonants in the string\n");
+				System.out.println("4. Count the number of white spaces in the string\n");
+				System.out.println("5. Count the number of symbols in the string\n");
+				System.out.println("6. Display its contents backward\n");
+				System.out.println("7. Enter another string\n");
+				System.out.println("8. Exit the program\n");
+				
+            
+				int choice = scanner.nextInt();
+            
+				scanner.nextLine();
+				
+				// switch case for our options of the menu and checking each method of StringMethods
+				switch (choice)
+            
+				{
+            
+					case 1:
+                
+						System.out.println("\nVowels: " + stringMethod.numVowels());
+						break;
+            
+					case 2:
+                
+						System.out.println("\nConsonants: " + stringMethod.numConsonants());
+						break;
+            
+					case 3:
+                
+						System.out.println("\nVowels: " + stringMethod.numVowels());
+						System.out.println("Consonants: " + stringMethod.numConsonants());
+						break;
+            
+					case 4:
+                
+						System.out.println("\nWhite Spaces: " + stringMethod.numWhiteSpaces());
+						break;
+            
+					case 5:
+                
+						System.out.println("\nSymbols: " + stringMethod.numSymbols());
+						break;
+            
+					case 6:
+                
+						System.out.println("\nThe string you entered was: " + inputString);
+						System.out.println("\nThe string reversed is: " + StringMethods.reverseString(inputString));
+						break;
+            
+					case 7:
+						
+						// this case allows us to break back to beginning of program for new input.
+						break;
+            
+					case 8:
+						
+						// end program.
+						System.out.println("\nProgram is now exiting...\n");
+						scanner.close();
+						System.exit(0);
+						break;
+          		
+			}
+				
+		}
+            	
+    }
+		
+}
+
+//////////////////////////////////////////////////////////
+
+StringMethodsTest.java
+
+//////////////////////////////////////////////////////////
+
+package asgsp23Test;
+
+import org.junit.jupiter.api.Test;
+
+import asgsp23.StringMethods;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class StringMethodsTest 
+
+{
+	
+	//Each Test tests for the required methods in the main class.
+	
+    @Test
+    public void testVowels() 
+    
+    {
+        
+        // three objects for each input string
+        
+    	StringMethods stringMethods1 = new StringMethods("OMG, this party is lit!!");
+    	StringMethods stringMethods2 = new StringMethods("Slayyy, that outfit is fire!");
+    	StringMethods stringMethods3 = new StringMethods("IDK, I'm feeling kinda sus.");
+    	assertEquals(5, stringMethods1.numVowels());
+    	assertEquals(8, stringMethods2.numVowels());
+    	assertEquals(8, stringMethods3.numVowels());
+    
+    }
+
+    @Test
+    public void testConsonants() 
+    
+    {
+        
+    	StringMethods stringMethods1 = new StringMethods("OMG, this party is lit!!");
+    	StringMethods stringMethods2 = new StringMethods("Slayyy, that outfit is fire!");
+    	StringMethods stringMethods3 = new StringMethods("IDK, I'm feeling kinda sus.");
+    	assertEquals(12, stringMethods1.numConsonants());
+    	assertEquals(14, stringMethods2.numConsonants());
+    	assertEquals(12, stringMethods3.numConsonants());
+        
+    
+    }
+
+    @Test
+    public void testVowelsAndConsonants() 
+    
+    {
+        
+    	StringMethods stringMethods1 = new StringMethods("OMG, this party is lit!!");
+    	StringMethods stringMethods2 = new StringMethods("Slayyy, that outfit is fire!");
+    	StringMethods stringMethods3 = new StringMethods("IDK, I'm feeling kinda sus.");
+    	assertEquals(5, stringMethods1.numVowels());
+    	assertEquals(8, stringMethods2.numVowels());
+    	assertEquals(8, stringMethods3.numVowels());
+    	
+    	assertEquals(12, stringMethods1.numConsonants());
+    	assertEquals(14, stringMethods2.numConsonants());
+    	assertEquals(12, stringMethods3.numConsonants());
+    
+    }
+
+    @Test
+    public void testWhiteSpaces() 
+    
+    {
+        
+    	StringMethods stringMethods1 = new StringMethods("OMG, this party is lit!!");
+    	StringMethods stringMethods2 = new StringMethods("Slayyy, that outfit is fire!");
+    	StringMethods stringMethods3 = new StringMethods("IDK, I'm feeling kinda sus.");
+   
+        assertEquals(4, stringMethods1.numWhiteSpaces());
+        assertEquals(4, stringMethods2.numWhiteSpaces());
+        assertEquals(4, stringMethods3.numWhiteSpaces());
+    
+    }
+
+    @Test
+    public void testSymbols() 
+    
+    {
+       
+    	StringMethods stringMethods1 = new StringMethods("OMG, this party is lit!!");
+    	StringMethods stringMethods2 = new StringMethods("Slayyy, that outfit is fire!");
+    	StringMethods stringMethods3 = new StringMethods("IDK, I'm feeling kinda sus.");
+        
+    	assertEquals(3, stringMethods1.numSymbols());
+    	assertEquals(2, stringMethods2.numSymbols());
+    	assertEquals(3, stringMethods3.numSymbols());
+    
+    }
+
+    @Test
+    public void testReverseString() 
+    
+    {
+        
+    	assertEquals("!!til si ytrap siht ,GMO", StringMethods.reverseString("OMG, this party is lit!!"));
+    	assertEquals("!erif si tiftuo taht ,yyyalS", StringMethods.reverseString("Slayyy, that outfit is fire!"));
+    	assertEquals(".sus adnik gnileef m'I ,KDI", StringMethods.reverseString("IDK, I'm feeling kinda sus."));
+    
+    }
+
+}
+
+//////////////////////////////////////////////////////////
+
+XML File
+
+//////////////////////////////////////////////////////////
+
+<?xml version="1.0" encoding="UTF-8"?><testrun name="StringMethodsJunit" project="asgsp23" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="asgsp23Test.StringMethodsTest" time="0.052" displayname="StringMethodsTest" uniqueid="[engine:junit-jupiter]/[class:asgsp23Test.StringMethodsTest]">
+    <testcase name="testSymbols" classname="asgsp23Test.StringMethodsTest" time="0.025" displayname="testSymbols()" uniqueid="[engine:junit-jupiter]/[class:asgsp23Test.StringMethodsTest]/[method:testSymbols()]"/>
+    <testcase name="testWhiteSpaces" classname="asgsp23Test.StringMethodsTest" time="0.002" displayname="testWhiteSpaces()" uniqueid="[engine:junit-jupiter]/[class:asgsp23Test.StringMethodsTest]/[method:testWhiteSpaces()]"/>
+    <testcase name="testConsonants" classname="asgsp23Test.StringMethodsTest" time="0.001" displayname="testConsonants()" uniqueid="[engine:junit-jupiter]/[class:asgsp23Test.StringMethodsTest]/[method:testConsonants()]"/>
+    <testcase name="testReverseString" classname="asgsp23Test.StringMethodsTest" time="0.003" displayname="testReverseString()" uniqueid="[engine:junit-jupiter]/[class:asgsp23Test.StringMethodsTest]/[method:testReverseString()]"/>
+    <testcase name="testVowelsAndConsonants" classname="asgsp23Test.StringMethodsTest" time="0.0" displayname="testVowelsAndConsonants()" uniqueid="[engine:junit-jupiter]/[class:asgsp23Test.StringMethodsTest]/[method:testVowelsAndConsonants()]"/>
+    <testcase name="testVowels" classname="asgsp23Test.StringMethodsTest" time="0.001" displayname="testVowels()" uniqueid="[engine:junit-jupiter]/[class:asgsp23Test.StringMethodsTest]/[method:testVowels()]"/>
+  </testsuite>
+</testrun>
+
+
+
+
+
+
+

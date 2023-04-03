@@ -1,0 +1,263 @@
+// Lab-8 – COSC 2425-03 – Professor McCurry
+
+//  Implemented by - Brandon Dove
+
+
+////////////////////////////////////////////
+
+Person Class
+
+////////////////////////////////////////////
+
+package cosc2425lab8sp23;
+
+public class Person 
+
+{
+	// Initializing fields
+	String name;
+	String address;
+	String number;
+	
+	public Person(String name, String address, String number)
+	
+	{
+		// Constructor with fields.
+		this.name = name;
+		this.address = address;
+		this.number = number;
+				
+	}
+
+	// Setters and getters for fields.
+	public String getName() 
+	{
+		
+		return name;
+	
+	}
+
+	public void setName(String name) 
+	
+	{
+	
+		this.name = name;
+	
+	}
+
+	public String getAddress() 
+	
+	{
+	
+		return address;
+	
+	}
+
+	public void setAddress(String address) 
+	
+	{
+	
+		this.address = address;
+	
+	}
+
+	public String getNumber() 
+	
+	{
+	
+		return number;
+	
+	}
+
+	public void setNumber(String number) 
+	
+	{
+	
+		this.number = number;
+	
+	}
+
+	//toString that just returns our name, address, and number.
+	@Override
+	public String toString() 
+	
+	{
+		
+		return name + " " + address + " "  + number;
+	
+	}
+	
+}
+
+////////////////////////////////////////////
+
+Employee Class
+
+////////////////////////////////////////////
+
+package cosc2425lab8sp23;
+
+public class Employee extends Person
+// Extending our employee from Person
+
+{
+	
+	String EID;
+	String department;
+	String email;
+	boolean exempt;
+	
+	
+	
+
+	// Employee constructor.
+	public Employee(String name, String address, String number, String eID, String department, String email, boolean exempt) 
+	
+	{
+		
+		super(name, address, number);
+		EID = eID;
+		this.department = department;
+		this.email = email;
+		this.exempt = exempt;
+	}
+	
+	// Setters and getters
+	public String getEID() 
+	
+	{
+	
+		return EID;
+	
+	}
+	
+	public void setEID(String eID) 
+	
+	{
+		
+		EID = eID;
+	
+	}
+
+	public String getDepartment() 
+	
+	{
+	
+		return department;
+	
+	}
+
+	public void setDepartment(String department) 
+	
+	{
+	
+		this.department = department;
+	
+	}
+
+	public String getEmail() 
+	
+	{
+	
+		return email;
+	
+	}
+
+	public void setEmail(String email) 
+	
+	{
+	
+		this.email = email;
+	
+	}
+
+	public boolean isExempt() 
+	
+	{
+	
+		return exempt;
+	
+	}
+
+	public void setExempt(boolean exempt) 
+	
+	{
+	
+		this.exempt = exempt;
+	
+	}
+	
+	// toString that is the same output as the Person class.
+	@Override
+	public String toString() 
+	
+	{
+		
+		return (this.getName() +" "+ this.getAddress() +" "+ this.getNumber() +" "+ this.getEID() +" "+ this.getDepartment() +" "+ this.getEID() +" "+ this.isExempt());
+		
+	}
+	
+}
+
+////////////////////////////////////////////
+
+Person Driver Output
+
+////////////////////////////////////////////
+
+Enter name of person:Hyacinthe Kitchenman
+Enter address of person:69 Barnett Center
+Enter phone number of person:520-621-6411
+You entered the following information: Hyacinthe Kitchenman 69 Barnett Center 520-621-6411
+Do you want to enter another peson information - y to continue?y
+Enter name of person:Hagen Ruane
+Enter address of person:2731 Granby Plaza
+Enter phone number of person:342-639-8706
+You entered the following information: Hagen Ruane 2731 Granby Plaza 342-639-8706
+Do you want to enter another peson information - y to continue?y
+Enter name of person:Lancelot Hateley
+Enter address of person:866 Brickson Parkway
+Enter phone number of person:944-319-8034
+You entered the following information: Lancelot Hateley 866 Brickson Parkway 944-319-8034
+Do you want to enter another peson information - y to continue?
+
+////////////////////////////////////////////
+
+Employee Driver Output
+
+////////////////////////////////////////////
+
+Enter name of employee: Valaree Please
+Enter home address of employee: 39 Shoshone Parkway
+Enter home phone number of employee: 768-206-6459 
+Enter employee id number: 24-5301871
+Enter department of employee: Services
+Enter employee email: vplea6@mycompany.com
+Enter yes/no -- if employee exempt: yes
+You entered the following information: 
+Valaree Please 39 Shoshone Parkway 768-206-6459 24-5301871 Services 24-5301871 true
+Do you want to enter another employee information - y to continue?y
+Enter name of employee: Worden Stanistrete
+Enter home address of employee: 4761 Onsgard Street 
+Enter home phone number of employee: 712-978-8097
+Enter employee id number: 09-9399995
+Enter department of employee: Accounting
+Enter employee email: wstan7@mycompany.org	
+Enter yes/no -- if employee exempt: no
+You entered the following information: 
+Worden Stanistrete 4761 Onsgard Street 712-978-8097 09-9399995 Accounting 09-9399995 false
+Do you want to enter another employee information - y to continue?y
+Enter name of employee: Kylila Pautot  
+Enter home address of employee: 4825 Harper Circle  
+Enter home phone number of employee: 881-714-3089
+Enter employee id number: 85-3330247
+Enter department of employee: Engineering	
+Enter employee email: kpau8@mycompany.com 
+Enter yes/no -- if employee exempt: no
+You entered the following information: 
+Kylila Pautot 4825 Harper Circle 881-714-3089 85-3330247 Engineering 85-3330247 false
+Do you want to enter another employee information - y to continue?
+
+
+
+
