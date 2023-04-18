@@ -1,0 +1,178 @@
+// Lab Assignment-10 – COSC 2425-03 – Professor McCurry
+
+//  Implemented by - Brandon Dove
+
+/////////////////////////////////////////////
+
+Functional Interfaces Class
+
+/////////////////////////////////////////////
+
+package cosc2425lab10sp23;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.function.*;
+
+public class FunctionalInterfaces 
+
+{
+	
+	
+	// Field of String list
+	public List<String> list = new ArrayList<>();
+	
+	
+	
+	// Constructor adding our strings
+	public FunctionalInterfaces() 
+	
+	{
+	
+		list.add("apple");
+		list.add("banana");
+		list.add("cherry");
+		list.add("date");
+		list.add("fig");
+		
+	}
+	
+	
+	// filterStrings method that filters upon our list.
+	public List<String> filterStrings(Predicate<String> filterD)
+	
+	{
+		
+		List<String> filteredList = new ArrayList<>();
+		
+		
+		for ( String stringWord : list )
+			
+		{
+			
+			if ( filterD.test(stringWord) )
+				
+			{
+				
+				filteredList.add(stringWord);
+				
+			}
+			
+		}
+		
+		return filteredList;
+		
+	}
+	
+	// converts each string to uppercase.
+	public List<String> convertToUpperCase(Function<String, String> convertD)
+	
+	{
+		
+		List<String> convertedList = new ArrayList<>();
+		
+		for ( String stringWord : list)
+			
+		{
+			
+			stringWord.toUpperCase();
+			convertedList.add(convertD.apply(stringWord));
+			
+		}
+		
+		return convertedList;
+		
+	}
+	
+	// returns a random string.
+	public String getRandomString(Supplier<String> supplieD)
+	
+	{
+		
+		return supplieD.get();
+		
+		
+	}
+	
+	// prints all strings.
+	public void printStrings(Consumer<String> consumeD)
+	
+	{
+		
+		for (String stringWord : list)
+			
+		{
+			
+			consumeD.accept(stringWord);
+			
+		}
+		
+		
+			
+	}
+
+}
+
+/////////////////////////////////////////////
+
+Functional Interfaces Driver
+
+/////////////////////////////////////////////
+
+package cosc2425lab10sp23test;
+
+import java.util.function.*;
+import java.util.random.*;
+
+import cosc2425lab10sp23.FunctionalInterfaces;
+
+public class FunctionalInterfacesDriver 
+
+{
+	
+	public static void main(String[] args)
+	
+	{
+		
+		// instantiating our class.
+		FunctionalInterfaces interFace = new FunctionalInterfaces();
+		
+		
+		// Doing our functional requirements for our methods within our class.
+		Predicate<String> isA = str -> str.startsWith("a");
+		
+		Function<String, String> convertEd = String::toUpperCase;
+		
+		Supplier<String> randomIze = () -> interFace.list.get((int) (Math.random() * interFace.list.size()));
+		
+		Consumer<String> printS = System.out::println;
+		
+		
+		// Calling our methods and printing them.
+		System.out.print(interFace.filterStrings(isA) + "\n");
+		
+		System.out.print(interFace.convertToUpperCase(convertEd) + "\n");
+		
+		System.out.print(interFace.getRandomString(randomIze) + "\n");
+		
+		interFace.printStrings(printS);
+		
+	}
+	
+}
+
+/////////////////////////////////////////////
+
+Output
+
+/////////////////////////////////////////////
+
+[apple]
+[APPLE, BANANA, CHERRY, DATE, FIG]
+cherry
+apple
+banana
+cherry
+date
+fig
