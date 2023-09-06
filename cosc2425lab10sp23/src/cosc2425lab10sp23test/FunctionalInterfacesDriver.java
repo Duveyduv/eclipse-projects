@@ -18,7 +18,7 @@ public class FunctionalInterfacesDriver
 		
 		
 		// Doing our functional requirements for our methods within our class.
-		Predicate<String> isA = str -> str.startsWith("a");
+		Predicate<String> isA = str -> str.contains("a");
 		
 		Function<String, String> convertEd = String::toUpperCase;
 		
