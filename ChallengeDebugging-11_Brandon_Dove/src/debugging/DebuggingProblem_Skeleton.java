@@ -1,6 +1,7 @@
 package debugging;
 
 import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Set;
 
@@ -19,6 +20,11 @@ public class DebuggingProblem_Skeleton
 		long seed = name.hashCode();
 		Random random = new Random(seed);
 		
+		
+		ArrayList<Integer> evenNums = new ArrayList<Integer>();
+	    ArrayList<Integer> evensWithOdds = new ArrayList<Integer>();
+		
+		
 		for(int i = 0; i < 100000; i++)
 		{
 			if(i % 1000 == 0) System.out.println("i = " + i);
@@ -28,12 +34,33 @@ public class DebuggingProblem_Skeleton
 			int temp = intArray[random_j];
 			intArray[random_j] = intArray[random_k];
 			intArray[random_k] = temp;
+			
+
+			
+			if (intArray[0] % 2 == 0)
+			{
+				evenNums.add(intArray[0]);
+			}
+			
+			if (intArray[0] % 2 == 1)
+			{
+				evensWithOdds.addAll(evenNums);
+			}
+			
+			if (evensWithOdds.contains(intArray[0]));
+			{ 
+				System.out.println("The even repeated value is: " + intArray[0]);
+			}
+			
+			
+			
 		}
 	}
 	public static void main(String[] args)
+	
 	{
 		if("Brandon Dove".equals(DebuggingProblem_Skeleton.studentName) == false)
-		{
+		{	
 			final int STUDENT_NAME_NOT_SET = 1;
 			System.exit(STUDENT_NAME_NOT_SET);
 		}
