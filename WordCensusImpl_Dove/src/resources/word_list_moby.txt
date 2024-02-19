@@ -1,0 +1,5 @@
+"This is a sample text file.
+It contains words for ++-testing the WordCensus implementation.
+You can add this file using the readAndAddWordsFromFile method.
+Make sure to check the output of getCount and other methods. THE TEST THIS WORD IS A--;;asd OK
+sss

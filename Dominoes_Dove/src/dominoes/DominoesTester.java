@@ -3,7 +3,6 @@ package dominoes;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-
 import dominoes.Domino;
 import dominoes.DominoHighLowImpl_Dove;
 import dominoes.DominoHighLowSetImpl_Dove;
